@@ -126,12 +126,6 @@ module ActiveMerchant #:nodoc:
         check_token_response(response, ENDPOINTS[:redact], post, options)
       end
 
-      # def settle
-      #   post = {}
-      #   response = commit(ENDPOINTS[:settle], post)
-      #   check_token_response(response, ENDPOINTS[:settle], post, options)
-      # end
-
       def supports_scrubbing?
         true
       end
