@@ -228,10 +228,17 @@ module ActiveMerchant #:nodoc:
       end
 
       def headers
-        {
-          'Content-type' => 'application/json',
-          'Authorization' => 'Bearer ' + @options[:access_token]
-        }
+        if @options[:access_token] != nil
+          {
+            'Content-type' => 'application/json',
+            'Authorization' => 'Bearer ' + @options[:access_token]
+          }
+        else
+          {
+            'Content-type' => 'application/json',
+            'Authorization' => 'Bearer nil'
+          }
+        end
       end
 
       def success_from(response)
